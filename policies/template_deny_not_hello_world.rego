@@ -14,5 +14,5 @@ violation[{
     "description": "Template check that hello == world.",
     "remarks": "Change hello to == world."
 }] if {
-	not "world" in input.hello
+	"world" != input.hello
 }
