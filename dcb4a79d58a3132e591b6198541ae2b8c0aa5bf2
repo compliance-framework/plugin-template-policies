@@ -1,0 +1,5 @@
+lisa-design:
+- release-please.yml, release.yml and cut-prerelease.yml jobs carry `if: ${{ !github.event.repository.is_template }}`: the template never releases, but repos created from it copy these files and must release. preview.yml and ci.yml are unguarded by decision (W3-S2-templates).
+- The guard needs the repo marked as a template (is_template is false today); that is a human repo setting, not changed here.
+- Manifest seeded at 0.0.0 with NO bootstrap-sha: a SHA from the template's history would not exist in a repo created from it.
+- release-please-config.json is a verbatim copy of mock-plugin-policies-1 (simple); top-level keys equal workflows release-please/defaults.json at v1.5.2.
