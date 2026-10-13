@@ -9,10 +9,6 @@
 #   schedule: "* * * * * *"
 package compliance_framework.template.deny_not_hello_world
 
-violation[{
-    "title": "Template check that hello == world.",
-    "description": "Template check that hello == world.",
-    "remarks": "Change hello to == world."
-}] if {
+violation[{"description": "Template check that hello == world.", "remarks": "Change hello to == world.", "title": "Template check that hello == world."}] if {
 	"world" != input.hello
 }
