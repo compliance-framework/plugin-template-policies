@@ -22,6 +22,15 @@ You can easily build the policies by running
 opa build -b policies -o dist/bundle.tar.gz
 ```
 
+## Releasing
+
+These steps apply to repos created from this template; the template itself doesn't release.
+
+- Releases come from release-please PRs: merging one tags `vX.Y.Z` and publishes the bundle.
+- Release candidates (`vX.Y.Z-rcN`) come from the `cut-prerelease` workflow.
+- If the repo already has releases, set `.release-please-manifest.json` to its current version
+  (e.g. `{".": "1.2.3"}`) before the first release-please run.
+
 ## Running policies locally
 
 ```shell
