@@ -5,3 +5,7 @@ lisa-design:
 - Regal warnings (yoda-condition, equals-over-count) are left as is: errors-only decision (user, 2026-10-13).
 - opa fmt always collapses the multi-line violation head object and sorts its keys; there is no fmt-stable multi-line form, so the pure fmt output is kept.
 - release.yml and build-and-upload.yml untouched (W3 replaces them); actionlint v1.7.12 is clean on them.
+
+lisa-selfreview:
+- pass 1 (packs core, rego-policy): verdict approve, no findings in the diff. CORE-CI-001 satisfied (SHA-pinned reusable workflows, top-level permissions: {}). Checked locally with OPA 1.14.1 / Regal 0.43.0 / actionlint 1.7.12: fmt, check --strict, test (2/2), build, regal (0 errors, 2 warnings) all pass.
+- Pre-existing, outside the diff (not raised as findings): violation has no id and there are no risk_templates (REGO-VIOL-001, REGO-RISK-001); README's example still uses pre-1.0 syntax and evaluates data.compliance_framework.local_ssh; README doesn't list the policy (REGO-README-001).
