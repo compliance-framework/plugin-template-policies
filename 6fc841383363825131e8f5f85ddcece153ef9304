@@ -1,0 +1,7 @@
+lisa-design:
+- ci.yml is a byte-for-byte copy of mock-plugin-policies-1's caller (workflows v1.5.1); no opa-version input because ci-policies.yml defaults to 1.14.1 and the mock passes none. New repos copied from this template start with exactly this file.
+- No directory input: policies live in policies/ (the default).
+- No repo .regal/config.yaml: CI must use the shared config from compliance-framework/workflows.
+- Regal warnings (yoda-condition, equals-over-count) are left as is: errors-only decision (user, 2026-10-13).
+- opa fmt always collapses the multi-line violation head object and sorts its keys; there is no fmt-stable multi-line form, so the pure fmt output is kept.
+- release.yml and build-and-upload.yml untouched (W3 replaces them); actionlint v1.7.12 is clean on them.
